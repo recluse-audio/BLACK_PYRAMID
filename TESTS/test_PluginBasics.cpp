@@ -1,7 +1,7 @@
-#include <PluginProcessor.h>
+#include "PluginProcessor.h"
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_string.hpp>
-#include "Test_Utils/TestUtils.h"
+#include "TEST_UTILS/TestUtils.h"
 
 TEST_CASE("one is equal to one", "[dummy]")
 {
@@ -16,7 +16,7 @@ TEST_CASE("Plugin instance name", "[name]")
 
   PluginProcessor testPlugin;
 
-  CHECK_THAT(testPlugin.getName().toStdString(), Catch::Matchers::Equals("CMakeARA"));
+  CHECK_THAT(testPlugin.getName().toStdString(), Catch::Matchers::Equals("BLACK_PYRAMID"));
          
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <JuceHeader.h>
+#include "Util/Juce_Header.h"
 
 
 #if (MSVC)

@@ -16,7 +16,7 @@ PluginEditor::~PluginEditor()
 //==============================================================================
 void PluginEditor::paint (juce::Graphics& g)
 {
-	this->fillAll(juce::Colours::red);
+	g.fillAll(juce::Colours::red);
 }
 
 

@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.24.1)
 set(PROJECT_NAME "BLACK_PYRAMID")
 
 # defines SourceFiles
-include(cmake/SourceFiles.cmake)   
+include(CMAKE/SourceFiles.cmake)   
 
 # Valid formats: AAX Unity VST AU AUv3 Standalone
 set(FORMATS AU VST3 AUv3)
@@ -41,7 +41,7 @@ option(JUCE_ENABLE_MODULE_SOURCE_GROUPS "Show all module sources in IDE projects
 set(JUCE_COPY_PLUGIN_AFTER_BUILD ON)
 
 # JUCE is setup as a submodule in the /JUCE folder
-add_subdirectory(submodules/JUCE)
+add_subdirectory(SUBMODULES/JUCE)
 
 
 # Check the readme at `docs/CMake API.md` in the JUCE repo for full config
@@ -64,7 +64,7 @@ juce_add_plugin("${PROJECT_NAME}"
 
 )
 
-juce_generate_juce_header(${PROJECT_NAME})
+juce_generate_juce_header("${PROJECT_NAME}")
 
 
 # C++20, please
@@ -73,7 +73,7 @@ target_compile_features("${PROJECT_NAME}" PRIVATE cxx_std_20)
 
 target_include_directories(${PROJECT_NAME} 
     PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/Source
+        ${CMAKE_CURRENT_LIST_DIR}/SOURCE
 
 )
 
@@ -89,7 +89,7 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES
 )
 
 # The Xcode source tree should uhhh, still look like the source tree, yo
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/Source PREFIX "" FILES ${SourceFiles})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/SOURCE PREFIX "" FILES ${SourceFiles})
 
 
 
@@ -154,8 +154,8 @@ enable_testing()
 
 # "GLOBS ARE BAD" is brittle and silly dev UX, sorry CMake!
 # CONFIGURE_DEPENDS / Clion's CMake integration makes globbing absolutely fine
-file(GLOB_RECURSE TestFiles CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/Tests/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/Tests/*.h")
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/Tests PREFIX "" FILES ${TestFiles})
+file(GLOB_RECURSE TestFiles CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/TESTS/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/TESTS/*.h")
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/TESTS PREFIX "" FILES ${TestFiles})
 
 
 
@@ -174,9 +174,8 @@ add_executable(Tests ${TestFiles})
 target_compile_features(Tests PRIVATE cxx_std_20)
 
 
-
 # Our test executable also wants to know about our plugin code...
-target_include_directories(Tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source)
+target_include_directories(Tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SOURCE)
 target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain "${PROJECT_NAME}" ${JUCE_DEPENDENCIES})
 
 # Make an Xcode Scheme for the test executable so we can run tests in the IDE
@@ -193,7 +192,7 @@ set_target_properties(Tests PROPERTIES
     XCODE_GENERATE_SCHEME ON        # Make an Xcode Scheme for the test executable so we can run tests in the IDE
 )
 # Organize the test source in the Tests/ folder in the IDE
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/Tests PREFIX "" FILES ${TestFiles})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/TESTS PREFIX "" FILES ${TestFiles})
 
 # Load and use the .cmake file provided by Catch2
 # https://github.com/catchorg/Catch2/blob/devel/docs/cmake-integration.md
