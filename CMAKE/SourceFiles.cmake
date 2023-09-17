@@ -1,10 +1,15 @@
 set(SourceFiles
+    SOURCE/Block.cpp
+    SOURCE/Block.h
     SOURCE/PluginEditor.cpp
     SOURCE/PluginEditor.h
     SOURCE/PluginProcessor.cpp
     SOURCE/PluginProcessor.h
-    SOURCE/PyramidBlock.cpp
-    SOURCE/PyramidBlock.h
+    SOURCE/Pyramid.cpp
+    SOURCE/Pyramid.h
+    SOURCE/PyramidBlockView.cpp
+    SOURCE/PyramidBlockView.h
+    SOURCE/PyramidModel.h
     SOURCE/PyramidView.cpp
     SOURCE/PyramidView.h
     SOURCE/Util/Juce_Header.h

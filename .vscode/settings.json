@@ -2,5 +2,6 @@
     "files.associations": {
         "vector": "cpp",
         "atomic": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
