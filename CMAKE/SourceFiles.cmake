@@ -3,5 +3,9 @@ set(SourceFiles
     SOURCE/PluginEditor.h
     SOURCE/PluginProcessor.cpp
     SOURCE/PluginProcessor.h
+    SOURCE/PyramidBlock.cpp
+    SOURCE/PyramidBlock.h
+    SOURCE/PyramidView.cpp
+    SOURCE/PyramidView.h
     SOURCE/Util/Juce_Header.h
 )

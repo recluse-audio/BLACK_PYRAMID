@@ -2,7 +2,6 @@
 #include "PluginProcessor.h"
 
 
-
 //==============================================================================
 class PluginEditor  : public juce::AudioProcessorEditor
 {
@@ -15,6 +14,7 @@ public:
 	
 private:
 	PluginProcessor& mProcessor;
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginEditor)
 };
