@@ -1,14 +1,14 @@
 set(SourceFiles
     SOURCE/Block.cpp
     SOURCE/Block.h
+    SOURCE/BlockView.cpp
+    SOURCE/BlockView.h
     SOURCE/PluginEditor.cpp
     SOURCE/PluginEditor.h
     SOURCE/PluginProcessor.cpp
     SOURCE/PluginProcessor.h
     SOURCE/Pyramid.cpp
     SOURCE/Pyramid.h
-    SOURCE/PyramidBlockView.cpp
-    SOURCE/PyramidBlockView.h
     SOURCE/PyramidModel.h
     SOURCE/PyramidView.cpp
     SOURCE/PyramidView.h

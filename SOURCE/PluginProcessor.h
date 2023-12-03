@@ -7,6 +7,8 @@
 #include "ipps.h"
 #endif
 
+class Pyramid;
+
 class PluginProcessor : public juce::AudioProcessor
 {
 public:
@@ -41,7 +43,7 @@ public:
 	
 	
 private:
-
+    std::unique_ptr<Pyramid> mPyramid;  
 	
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

@@ -1,7 +1,7 @@
 #pragma once
 #include "Util/Juce_Header.h"
 
-class PyramidBlockView;
+class Pyramid;
 
 class PyramidView : public juce::Component
 {
@@ -10,6 +10,7 @@ public:
     void paint(juce::Graphics& g) override;
     void resized();
 
+    void drawPyramid(Pyramid& pyramid);
 private:
-    std::vector<PyramidBlockView> mBlockViews;
+
 };

@@ -1,6 +1,6 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-
+#include "Pyramid.h"
 
 //==============================================================================
 PluginProcessor::PluginProcessor()
@@ -13,7 +13,7 @@ PluginProcessor::PluginProcessor()
                      #endif
                        )
 {
-
+    mPyramid = std::make_unique<Pyramid>();
 }
 
 PluginProcessor::~PluginProcessor()

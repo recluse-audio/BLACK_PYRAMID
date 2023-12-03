@@ -1,6 +1,7 @@
 #pragma once
 #include "PluginProcessor.h"
 
+class PyramidView;
 
 //==============================================================================
 class PluginEditor  : public juce::AudioProcessorEditor
@@ -14,6 +15,9 @@ public:
 	
 private:
 	PluginProcessor& mProcessor;
+
+    std::unique_ptr<PyramidView> mPyramidView;
+
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginEditor)

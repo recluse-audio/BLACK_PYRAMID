@@ -2,12 +2,13 @@
 #pragma once
 #include "Util/Juce_Header.h"
 
-class PyramidBlockView : public juce::Component
+class BlockView : public juce::Component
 {
 public:
-    PyramidBlockView();
+    BlockView();
 
     void paint(juce::Graphics& g) override;
+
     void resized() override;
 
 private:

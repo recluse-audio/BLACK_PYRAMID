@@ -1,11 +1,11 @@
-#include "PyramidBlock.h"
+#include "BlockView.h"
 
-PyramidBlock::PyramidBlock()
+BlockView::BlockView()
 {
 
 }
 
-void PyramidBlock::paint(juce::Graphics& g)
+void BlockView::paint(juce::Graphics& g)
 {
     auto blockRect = this->getLocalBounds().toFloat();
     g.setColour(juce::Colours::grey);
@@ -15,7 +15,7 @@ void PyramidBlock::paint(juce::Graphics& g)
 }
 
 
-void PyramidBlock::resized()
+void BlockView::resized()
 {
 
 }
